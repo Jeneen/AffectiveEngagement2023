@@ -8,10 +8,7 @@
 ### a These authors contributed equally to the work
 
 
-
 sessionInfo()
-
-
 R version 4.3.0 (2023-04-21)
 Platform: aarch64-apple-darwin20 (64-bit)
 Running under: macOS Ventura 13.3.1
@@ -30,9 +27,9 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] viridis_0.6.3     viridisLite_0.4.2 ggforce_0.4.1     concaveman_1.1.0 
- [5] ggrepel_0.9.3     sjPlot_2.8.14     vegan_2.6-4       lattice_0.21-8   
- [9] permute_0.9-7     brms_2.19.0       Rcpp_1.0.11       semPower_2.0.1   
-[13] lavaan_0.6-15     scales_1.2.1      lubridate_1.9.2   forcats_1.0.0    
+ [1] semPower_2.0.1    lavaan_0.6-15     viridis_0.6.3     viridisLite_0.4.2
+ [5] ggforce_0.4.1     concaveman_1.1.0  ggrepel_0.9.3     sjPlot_2.8.14    
+ [9] vegan_2.6-4       lattice_0.21-8    permute_0.9-7     brms_2.19.0      
+[13] Rcpp_1.0.11       scales_1.2.1      lubridate_1.9.2   forcats_1.0.0    
 [17] stringr_1.5.0     dplyr_1.1.3       purrr_1.0.2       readr_2.1.4      
-[21] tidyr_1.3.0       tibble_3.2.1      ggplot2_3.4.3     tidyverse_2.0.0 
+[21] tidyr_1.3.0       tibble_3.2.1      ggplot2_3.4.3     tidyverse_2.0.0  

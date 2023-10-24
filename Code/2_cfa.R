@@ -1,6 +1,11 @@
-#load packages and set plot themes
-library(lavaan)
-library(semPower)
+# Define a list of packages
+packages <- c("lavaan", "semPower")
+
+# Install and load packages if they are not already installed
+for (package in packages) {
+  if (!requireNamespace(package, quietly = TRUE)) {
+    install.packages(package)}
+  library(package, character.only = TRUE)}
 source("Code/1_set_themes.R")
 
 #Load data 
@@ -14,6 +19,8 @@ round(cor(pa[,2:9]),2)
 
 #run cfa to confirm 2 dimensions
 #load psych package now
+if (!requireNamespace("psych", quietly = TRUE)) {
+  install.packages("psych")}
 library(psych)
 
 dim2 <- 'Personal =~ q1 + q2 + q5 + q6 
@@ -34,15 +41,6 @@ psych::alpha(cult)
 
 #plot
 cfa_plot <- semPlot::semPaths(cfa_dim2 , "std")
-
-
-#save figure - edit in Adobe 
-pdf(file = "Outputs/Figures/cfa_pas.pdf",   # The directory you want to save the file in
-    width = 15, # The width of the plot in inches
-    height = 10) # The height of the plot in inches
-cfa_plot
-dev.off()
-
 
 #tutorials and papers used:
 #https://benwhalley.github.io/just-enough-r/cfa.html

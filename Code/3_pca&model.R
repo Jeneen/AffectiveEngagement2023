@@ -72,7 +72,7 @@ ae_plot2 <- ggplot(data = final, aes(x = PC3, y = PC4))+
   geom_mark_ellipse(aes(fill = natcon_lab), expand = unit(0.4, "mm"))+
   scale_fill_manual(values = c("darkgrey", "white"))+
   geom_point(aes(color = age_size, shape = sex),alpha = 0.5, size = 5)+
-  scale_color_viridis(breaks=c(1,2,3,4,5,6),labels=c("18-24", "25-34", "35-44", "45-54", "55-64", "65+" ),
+  scale_color_viridis(option = "H", breaks=c(1,2,3,4,5,6),labels=c("18-24", "25-34", "35-44", "45-54", "55-64", "65+" ),
                       limits=c(1,6))+
   scale_size(range = c(1,5))+
   geom_segment(data = rotation, arrow = arrow(length = unit(0.5, "cm")), aes(x =0, xend=PC3*5, y=0, yend = PC4*5))+
@@ -85,22 +85,9 @@ ae_plot2 <- ggplot(data = final, aes(x = PC3, y = PC4))+
 ae_plot2
 
 
-#save axis 1 and 2 for figure
-pdf(file = "Outputs/figures/pca_affective_engagement_removeMinors.pdf",   # The directory you want to save the file in
-    width = 15, # The width of the plot in inches
-   height = 10) # The height of the plot in inches
-ae_plot
-dev.off()
-
-
-
 #now run models
-
 #permanova
 perm_post <- adonis2(data_all[,c(2:9)] ~ age + sex + natcon, data_all, distance = "euclidean", permutations = 1000)
-
-#save output
-write.csv(perm_post, "Outputs/tables/permanova.csv")
 
 
 #supplementary exploration
@@ -134,8 +121,8 @@ summary(m_pc2)
 
 
 #create supplementary table
-tab_model(m_pc1, file="Outputs/tables/supp_pca1_model.doc")
-tab_model(m_pc2, file="Outputs/tables/supp_pca2_model.doc")
+tab_model(m_pc1)
+tab_model(m_pc2)
 
 
 

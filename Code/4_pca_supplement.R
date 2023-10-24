@@ -57,10 +57,3 @@ ae_plot <- ggplot(data = final, aes(x = PC1, y = PC2))+
   xlab("Affective engagement PCA axis 1 (29% of variance)")+
   ylab("Affective engagement PCA axis 2 (22% of variance)")
 ae_plot
-
-#save supplementary figure
-pdf(file = "Outputs/figures/supplementary_pca_affective_engagement_removeMinors.pdf",   # The directory you want to save the file in
-    width = 15, # The width of the plot in inches
-    height = 10) # The height of the plot in inches
-ae_plot
-dev.off()

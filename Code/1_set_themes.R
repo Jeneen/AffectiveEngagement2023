@@ -1,14 +1,15 @@
-#load packages
-library(tidyverse)
-library(scales)
-library(ggplot2)
-library(brms)
-library(vegan)
-library(sjPlot)
-library(ggrepel)
-library(concaveman)
-library(ggforce)
-library(viridis)
+# Define a list of packages
+packages <- c("tidyverse", "scales", 
+              "ggplot2", "brms", 
+              "vegan", "sjPlot", 
+              "ggrepel", "concaveman", 
+              "ggforce", "viridis")
+
+# Install and load packages if they are not already installed
+for (package in packages) {
+  if (!requireNamespace(package, quietly = TRUE)) {
+    install.packages(package)}
+  library(package, character.only = TRUE)}
 
 #set theme for ggplot
 themes <-  theme(panel.border = element_blank(),
